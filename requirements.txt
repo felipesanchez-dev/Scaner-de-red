@@ -1,0 +1,4 @@
+requests==2.31.0
+python-nmap==0.7.1
+psutil==5.9.8
+scapy==2.5.0
