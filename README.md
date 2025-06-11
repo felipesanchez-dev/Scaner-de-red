@@ -110,7 +110,7 @@ scapy==2.5.0 (opcional)
 
 #### 1. Clonar el Repositorio
 ```bash
-git clone https://github.com/usuario/network-scanner-pro.git
+git clone https://github.com/felipesanchez-dev/Scaner-de-red.git
 cd network-scanner-pro
 ```
 
