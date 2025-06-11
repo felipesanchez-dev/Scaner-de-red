@@ -40,7 +40,7 @@ Network Scanner Pro es una herramienta de código abierto desarrollada en Python
 Proporcionar una herramienta **gratuita**, **potente** y **fácil de usar** para el análisis de redes locales, con capacidades de:
 
 - ✅ Detección automática de dispositivos
-- ✅ Clasificación inteligente por tipo de dispositivo  
+- ✅ Clasificación inteligente por tipo de dispositivo
 - ✅ Análisis de seguridad básico
 - ✅ Monitoreo en tiempo real
 - ✅ Reportes detallados y exportables
@@ -51,11 +51,11 @@ Proporcionar una herramienta **gratuita**, **potente** y **fácil de usar** para
 
 ### 🔍 Capacidades de Escaneo
 
-| Tipo de Escaneo | Descripción | Tiempo Estimado | Uso Recomendado |
-|------------------|-------------|-----------------|-----------------|
-| **⚡ Escaneo Rápido** | Análisis de dispositivos comunes (1-50) | 30-60 segundos | Uso diario |
-| **🔬 Escaneo Profundo** | Análisis completo de la red (1-254) | 3-10 minutos | Análisis exhaustivo |
-| **📡 Monitoreo Continuo** | Seguimiento en tiempo real | Indefinido | Supervisión activa |
+| Tipo de Escaneo           | Descripción                             | Tiempo Estimado | Uso Recomendado     |
+| ------------------------- | --------------------------------------- | --------------- | ------------------- |
+| **⚡ Escaneo Rápido**     | Análisis de dispositivos comunes (1-50) | 30-60 segundos  | Uso diario          |
+| **🔬 Escaneo Profundo**   | Análisis completo de la red (1-254)     | 3-10 minutos    | Análisis exhaustivo |
+| **📡 Monitoreo Continuo** | Seguimiento en tiempo real              | Indefinido      | Supervisión activa  |
 
 ### 🖥️ Detección Inteligente de Dispositivos
 
@@ -96,11 +96,11 @@ Proporcionar una herramienta **gratuita**, **potente** y **fácil de usar** para
 
 ### 💻 Sistemas Operativos Soportados
 
-| SO | Versiones | Estado |
-|----|-----------|--------|
-| **Windows** | 10, 11 | ✅ Completamente soportado |
-| **Linux** | Ubuntu 20.04+, Debian 10+, CentOS 8+ | ✅ Completamente soportado |
-| **macOS** | 10.15+ (Catalina o superior) | ✅ Completamente soportado |
+| SO          | Versiones                            | Estado                     |
+| ----------- | ------------------------------------ | -------------------------- |
+| **Windows** | 10, 11                               | ✅ Completamente soportado |
+| **Linux**   | Ubuntu 20.04+, Debian 10+, CentOS 8+ | ✅ Completamente soportado |
+| **macOS**   | 10.15+ (Catalina o superior)         | ✅ Completamente soportado |
 
 ### 🐍 Requisitos de Software
 
@@ -110,7 +110,6 @@ Proporcionar una herramienta **gratuita**, **potente** y **fácil de usar** para
 - **Red**: Conexión a red local activa
 
 ### 📦 Dependencias Python
-
 
 ```mermaid
 graph TD
@@ -132,38 +131,39 @@ graph TD
     M -->|Yes| O[Merge to Main]
     O --> P[Deploy/Release]
 ```
+
 ```mermaid
 graph TB
     subgraph "User Interface Layer"
         GUI[Tkinter GUI]
         CLI[Command Line Interface]
     end
-    
+
     subgraph "Application Layer"
         Scanner[Network Scanner]
         Config[Configuration Manager]
         Export[Report Exporter]
     end
-    
+
     subgraph "Core Layer"
         Detection[Device Detection]
         Analysis[Network Analysis]
         Monitor[Real-time Monitor]
     end
-    
+
     subgraph "Network Layer"
         Ping[ICMP Ping]
         Port[Port Scanner]
         ARP[ARP Table]
         DNS[DNS Lookup]
     end
-    
+
     subgraph "Data Layer"
         JSON[JSON Reports]
         Logs[Log Files]
         Config_File[Config Files]
     end
-    
+
     GUI --> Scanner
     CLI --> Scanner
     Scanner --> Detection
@@ -189,12 +189,12 @@ sequenceDiagram
     participant Scanner
     participant Network
     participant Device
-    
+
     User->>GUI: Click "Start Scan"
     GUI->>Scanner: start_scan()
     Scanner->>Network: get_network_range()
     Network-->>Scanner: "192.168.1.0/24"
-    
+
     loop For each IP
         Scanner->>Device: ping_host(ip)
         Device-->>Scanner: response/timeout
@@ -207,7 +207,7 @@ sequenceDiagram
             Scanner->>GUI: update_device_list()
         end
     end
-    
+
     Scanner->>GUI: scan_complete()
     GUI->>User: Display results
 ```
@@ -223,36 +223,39 @@ flowchart TD
     GetVendor --> GetHostname[Obtener Hostname]
     GetHostname --> ScanPorts[Escanear Puertos]
     ScanPorts --> AnalyzePorts{Analizar Puertos}
-    
+
     AnalyzePorts -->|SSH:22| Linux[Linux/Unix]
     AnalyzePorts -->|RDP:3389| Windows[Windows]
     AnalyzePorts -->|Bonjour:5353| Apple[Apple Device]
     AnalyzePorts -->|HTTP:80| WebDevice[Web Device]
     AnalyzePorts -->|Print:631| Printer[Printer]
-    
+
     Linux --> Classify[Clasificar Dispositivo]
     Windows --> Classify
     Apple --> Classify
     WebDevice --> Classify
     Printer --> Classify
-    
+
     Classify --> SaveDevice[Guardar Información]
     SaveDevice --> UpdateGUI[Actualizar GUI]
     UpdateGUI --> End2([Fin])
 ```
 
 ---
+
 ## 🚀 Instalación
 
 ### Método 1: Instalación Estándar ⭐ (Recomendado)
 
 #### 1️⃣ Clonar el Repositorio
+
 ```bash
 git clone https://github.com/felipesanchez-dev/network-scanner-pro.git
 cd network-scanner-pro
 ```
 
 #### 2️⃣ Crear Entorno Virtual (Altamente Recomendado)
+
 ```bash
 # Windows
 python -m venv scanner_env
@@ -264,11 +267,13 @@ source scanner_env/bin/activate
 ```
 
 #### 3️⃣ Instalar Dependencias
+
 ```bash
 pip install -r requirements.txt
 ```
 
 #### 4️⃣ Ejecutar la Aplicación
+
 ```bash
 python main.py
 ```
@@ -298,6 +303,7 @@ docker run -it --network host network-scanner-pro
 ### 🔧 Solución de Problemas Comunes
 
 #### ❌ Error de Tkinter en Linux
+
 ```bash
 # Ubuntu/Debian
 sudo apt-get install python3-tk python3-dev
@@ -307,6 +313,7 @@ sudo dnf install tkinter python3-tkinter
 ```
 
 #### ❌ Problemas de Permisos (Linux/macOS)
+
 ```bash
 # Dar permisos para ping sin sudo
 sudo setcap cap_net_raw+ep $(which python3)
@@ -316,6 +323,7 @@ sudo python3 main.py
 ```
 
 #### ❌ Error de Módulos No Encontrados
+
 ```bash
 # Verificar que el entorno virtual esté activo
 which python  # Debe mostrar la ruta del entorno virtual
@@ -331,11 +339,13 @@ pip install --upgrade -r requirements.txt
 ### 🚀 Inicio Rápido
 
 1. **Ejecutar la aplicación**:
+
    ```bash
    python main.py
    ```
 
 2. **Realizar tu primer escaneo**:
+
    - Haz clic en **"⚡ Quick Scan"** para un escaneo rápido
    - O selecciona **"🔬 Deep Scan"** para un análisis completo
 
@@ -346,48 +356,50 @@ pip install --upgrade -r requirements.txt
 
 ### 🎮 Controles y Atajos
 
-| Atajo | Función | Descripción |
-|-------|---------|-------------|
-| `Ctrl+N` | Nuevo escaneo rápido | Inicia un escaneo rápido inmediatamente |
-| `Ctrl+D` | Escaneo profundo | Ejecuta un análisis completo de la red |
-| `F5` | Refrescar | Actualiza la vista actual |
-| `Ctrl+S` | Exportar reporte | Guarda los resultados del último escaneo |
-| `Ctrl+Q` | Salir | Cierra la aplicación |
-| `Esc` | Detener escaneo | Cancela el escaneo en progreso |
+| Atajo    | Función              | Descripción                              |
+| -------- | -------------------- | ---------------------------------------- |
+| `Ctrl+N` | Nuevo escaneo rápido | Inicia un escaneo rápido inmediatamente  |
+| `Ctrl+D` | Escaneo profundo     | Ejecuta un análisis completo de la red   |
+| `F5`     | Refrescar            | Actualiza la vista actual                |
+| `Ctrl+S` | Exportar reporte     | Guarda los resultados del último escaneo |
+| `Ctrl+Q` | Salir                | Cierra la aplicación                     |
+| `Esc`    | Detener escaneo      | Cancela el escaneo en progreso           |
 
 ### 📊 Interpretación de Resultados
 
 #### Estados de Dispositivos
+
 - 🟢 **Online**: Dispositivo activo y respondiendo a ping
 - 🔴 **Offline**: Dispositivo detectado pero no responde actualmente
 - ⚠️ **Parcial**: Dispositivo responde parcialmente
 
 #### Métricas de Rendimiento
-| Latencia | Calificación | Descripción |
-|----------|--------------|-------------|
-| < 10ms | 🟢 Excelente | Red local muy rápida |
-| 10-50ms | 🟡 Bueno | Rendimiento normal |
-| 50-100ms | 🟠 Regular | Posible congestión |
-| > 100ms | 🔴 Lento | Problemas de conectividad |
+
+| Latencia | Calificación | Descripción               |
+| -------- | ------------ | ------------------------- |
+| < 10ms   | 🟢 Excelente | Red local muy rápida      |
+| 10-50ms  | 🟡 Bueno     | Rendimiento normal        |
+| 50-100ms | 🟠 Regular   | Posible congestión        |
+| > 100ms  | 🔴 Lento     | Problemas de conectividad |
 
 #### Niveles de Riesgo de Seguridad
-| Nivel | Criterios | Recomendación |
-|-------|-----------|---------------|
-| 🟢 **Bajo** | < 5 puertos abiertos, servicios estándar | Seguridad aceptable |
-| 🟡 **Medio** | 5+ puertos abiertos | Revisar configuración |
-| 🔴 **Alto** | Servicios inseguros detectados | Acción inmediata requerida |
+
+| Nivel        | Criterios                                | Recomendación              |
+| ------------ | ---------------------------------------- | -------------------------- |
+| 🟢 **Bajo**  | < 5 puertos abiertos, servicios estándar | Seguridad aceptable        |
+| 🟡 **Medio** | 5+ puertos abiertos                      | Revisar configuración      |
+| 🔴 **Alto**  | Servicios inseguros detectados           | Acción inmediata requerida |
 
 ---
-
 
 ### 🔧 Descripción de Archivos Principales
 
 #### `main.py` - Aplicación Principal
+
 - **Clase NetworkScanner**: Controlador principal de la aplicación
 - **GUI Management**: Configuración y manejo de la interfaz gráfica
 - **Scan Logic**: Algoritmos de detección y análisis de red
 - **Export Functions**: Funcionalidades de exportación de reportes
-
 
 ---
 
@@ -398,16 +410,19 @@ pip install --upgrade -r requirements.txt
 ¡Tu contribución es muy valiosa! Hay muchas formas de ayudar:
 
 #### 🐛 Reportar Bugs
+
 - Busca issues existentes antes de crear uno nuevo
 - Incluye información detallada del sistema
 - Proporciona pasos para reproducir el problema
 
 #### 💡 Sugerir Mejoras
+
 - Describe claramente la funcionalidad propuesta
 - Explica el beneficio para los usuarios
 - Considera la viabilidad técnica
 
 #### 💻 Contribuir Código
+
 - Fork el repositorio
 - Sigue las convenciones de código
 - Incluye tests para nuevas funcionalidades
@@ -416,6 +431,7 @@ pip install --upgrade -r requirements.txt
 ### 📋 Proceso de Contribución
 
 #### 1️⃣ Preparar el Entorno
+
 ```bash
 # Fork y clonar
 git clone https://github.com/tu-usuario/network-scanner-pro.git
@@ -426,6 +442,7 @@ git checkout -b feature/nueva-funcionalidad
 ```
 
 #### 2️⃣ Desarrollar
+
 ```bash
 # Realizar cambios
 # ... código ...
@@ -438,6 +455,7 @@ python -m flake8 main.py
 ```
 
 #### 3️⃣ Commit y Push
+
 ```bash
 # Commit con formato convencional
 git commit -m "feat(scanner): añadir detección de dispositivos IPv6"
@@ -447,43 +465,48 @@ git push origin feature/nueva-funcionalidad
 ```
 
 #### 4️⃣ Pull Request
+
 - Crea un PR con descripción detallada
 - Referencia issues relacionados
 - Espera el review del código
 
 ### 📝 Convenciones de Commits
 
-| Tipo | Descripción | Ejemplo |
-|------|-------------|---------|
-| `feat` | Nueva funcionalidad | `feat(scan): añadir soporte IPv6` |
-| `fix` | Corrección de bug | `fix(gui): corregir crash al exportar` |
-| `docs` | Documentación | `docs(readme): actualizar guía instalación` |
-| `style` | Formato código | `style(main): aplicar PEP8` |
-| `refactor` | Refactorización | `refactor(scanner): optimizar algoritmo ping` |
-| `test` | Tests | `test(core): añadir tests unitarios` |
-| `perf` | Rendimiento | `perf(scan): reducir tiempo escaneo 50%` |
+| Tipo       | Descripción         | Ejemplo                                       |
+| ---------- | ------------------- | --------------------------------------------- |
+| `feat`     | Nueva funcionalidad | `feat(scan): añadir soporte IPv6`             |
+| `fix`      | Corrección de bug   | `fix(gui): corregir crash al exportar`        |
+| `docs`     | Documentación       | `docs(readme): actualizar guía instalación`   |
+| `style`    | Formato código      | `style(main): aplicar PEP8`                   |
+| `refactor` | Refactorización     | `refactor(scanner): optimizar algoritmo ping` |
+| `test`     | Tests               | `test(core): añadir tests unitarios`          |
+| `perf`     | Rendimiento         | `perf(scan): reducir tiempo escaneo 50%`      |
 
 ### 🎯 Áreas Prioritarias
 
 #### 🔧 Desarrollo Core
+
 - [ ] Soporte para IPv6
 - [ ] Detección de servicios avanzada
 - [ ] Optimización de algoritmos
 - [ ] Caché inteligente de resultados
 
 #### 🎨 Interfaz de Usuario
+
 - [ ] Temas personalizables
 - [ ] Gráficos de red interactivos
 - [ ] Modo oscuro mejorado
 - [ ] Accesibilidad completa
 
 #### 📊 Análisis y Reportes
+
 - [ ] Exportar a CSV/Excel
 - [ ] Reportes PDF
 - [ ] Comparación histórica
 - [ ] Alertas automáticas
 
 #### 🧪 Testing y Calidad
+
 - [ ] Aumentar cobertura de tests (objetivo: 90%)
 - [ ] Tests de integración
 - [ ] Benchmarks de rendimiento
@@ -496,12 +519,14 @@ git push origin feature/nueva-funcionalidad
 ### 🛡️ Principios de Seguridad
 
 #### ✅ Diseño Seguro
+
 - **Principio de menor privilegio**: Funciona con permisos de usuario estándar
 - **Sin comunicación externa**: Solo consultas de vendor por MAC (opcional)
 - **Datos locales únicamente**: Toda la información permanece en tu equipo
 - **Código transparente**: Open source y auditable
 
 #### 🔒 Protección de Datos
+
 - **Sin almacenamiento de credenciales**: No guarda contraseñas ni tokens
 - **Cifrado opcional**: Posibilidad de cifrar reportes sensibles
 - **Rotación de logs**: Limpieza automática de archivos antiguos
@@ -510,12 +535,14 @@ git push origin feature/nueva-funcionalidad
 ### ⚖️ Uso Responsable
 
 #### ✅ Usos Permitidos
+
 - Análisis de tu propia red doméstica
 - Administración de redes corporativas autorizadas
 - Educación y aprendizaje en entornos controlados
 - Auditorías de seguridad con autorización
 
 #### ❌ Usos Prohibidos
+
 - Escaneo de redes sin autorización
 - Actividades que violen la privacidad
 - Acceso no autorizado a sistemas
@@ -530,7 +557,6 @@ git push origin feature/nueva-funcionalidad
 
 ---
 
-
 ---
 
 ## 📄 Licencia
@@ -540,16 +566,19 @@ Este proyecto está licenciado bajo la **Licencia MIT** - ver el archivo [LICENS
 ### 📋 Resumen de la Licencia MIT
 
 ✅ **Permisos**:
+
 - Uso comercial y personal
 - Modificación del código fuente
 - Distribución libre
 - Uso privado sin restricciones
 
 ❗ **Condiciones**:
+
 - Incluir copyright y licencia en copias
 - Mantener atribución al autor original
 
 🚫 **Limitaciones**:
+
 - Sin garantía de funcionamiento
 - Sin responsabilidad por daños
 - Sin soporte técnico obligatorio
@@ -572,6 +601,7 @@ Este proyecto está licenciado bajo la **Licencia MIT** - ver el archivo [LICENS
 Soy un desarrollador apasionado por crear herramientas que resuelvan problemas reales. Network Scanner Pro nació de la necesidad de tener una herramienta simple pero poderosa para el análisis de redes domésticas y pequeñas empresas.
 
 #### 💼 Especialidades
+
 - **Frontend**: React, Vue.js, Svelte
 - **Backend**: Python, Node.js, Django
 - **Mobile**: React Native, Flutter
@@ -600,12 +630,15 @@ Soy un desarrollador apasionado por crear herramientas que resuelvan problemas r
 Si este proyecto te ha sido útil, considera apoyarlo:
 
 ### ⭐ Dale una Estrella
+
 [![GitHub stars](https://img.shields.io/github/stars/felipesanchez-dev/network-scanner-pro?style=social)](https://github.com/felipesanchez-dev/network-scanner-pro/stargazers)
 
 ### 🍴 Haz un Fork
+
 [![GitHub forks](https://img.shields.io/github/forks/felipesanchez-dev/network-scanner-pro?style=social)](https://github.com/felipesanchez-dev/network-scanner-pro/network/members)
 
 ### 👀 Sígueme
+
 [![GitHub followers](https://img.shields.io/github/followers/felipesanchez-dev?style=social)](https://github.com/felipesanchez-dev)
 
 ---
@@ -616,11 +649,9 @@ Si este proyecto te ha sido útil, considera apoyarlo:
 - 🐛 **Reporta bugs o sugiere mejoras**
 - 💻 **Contribuye con código**
 - 📢 **Comparte el proyecto**
-- ☕ **Invítame un café** (próximamente)
 
 ---
 
-
-*"La mejor forma de predecir el futuro es construyéndolo"*
+_"La mejor forma de predecir el futuro es construyéndolo"_
 
 </div>
