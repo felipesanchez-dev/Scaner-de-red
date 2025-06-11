@@ -603,7 +603,7 @@ Soy un desarrollador apasionado por crear herramientas que resuelvan problemas r
 #### 💼 Especialidades
 
 - **Frontend**: React
-- **Backend**: Python, Node.js, Django
+- **Backend**:  Node.js, TypeScript
 - **Mobile**: React Native, Flutter
 - **DevOps**: Docker, AWS, Linux
 - **Security**: Network Analysis, Penetration Testing
