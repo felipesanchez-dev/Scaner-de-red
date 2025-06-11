@@ -602,7 +602,7 @@ Soy un desarrollador apasionado por crear herramientas que resuelvan problemas r
 
 #### 💼 Especialidades
 
-- **Frontend**: React, Vue.js, Svelte
+- **Frontend**: React
 - **Backend**: Python, Node.js, Django
 - **Mobile**: React Native, Flutter
 - **DevOps**: Docker, AWS, Linux
